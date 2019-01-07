@@ -5,7 +5,6 @@
         <v-list-tile 
         v-for="item in menuItems" 
         :key="item.title"
-        router
         :to="item.link">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -18,7 +17,7 @@
     <v-toolbar dark class="primary">
       <v-toolbar-side-icon 
       class="hidden-sm-and-up"
-      @click.native.stop="sideNav = !sideNav"></v-toolbar-side-icon>
+      @click.stop="sideNav = !sideNav"></v-toolbar-side-icon>
       <v-toolbar-title>
         <router-link to="/" tag="span" style="cursor: pointer">
           DevMeetup
@@ -30,7 +29,6 @@
       flat 
       v-for="item in menuItems" 
       :key="item.title"
-      router
       :to="item.link">
         <v-icon left dark>{{ item.icon }}</v-icon>
        {{ item.title }}</v-btn>
