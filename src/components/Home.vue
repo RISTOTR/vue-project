@@ -44,12 +44,9 @@
 
 <script>
 export default {
-    data() {
-        return {
-            meetups: [
-                { imageUrl: 'https://media.timeout.com/images/104692494/image.jpg', id: 'aldkfja', title: 'Meetup in New York'},
-                { imageUrl: 'https://photos.mandarinoriental.com/is/image/MandarinOriental/paris-2017-home?wid=2880&hei=1280&fmt=jpeg&crop=9,336,2699,1200&anchor=1358,936&qlt=75,0&fit=wrap&op_sharpen=0&resMode=sharp2&op_usm=0,0,0,0&iccEmbed=0&printRes=72', id: 'aldkfja123', title: 'Meetup in Paris'}
-            ]
+    computed: {
+        meetups (){
+            return this.$store.getters.featuredMeetups
         }
     },
     methods: {

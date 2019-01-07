@@ -30,6 +30,7 @@ component: Home
       {
         path: '/meetups/:id',
       name: 'Meetup',
+      props: true,
       component: Meetup
       },
       {
