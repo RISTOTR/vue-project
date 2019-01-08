@@ -2,6 +2,7 @@ import Vue from 'vue'
 import router from './router/index.js'
 import './plugins/vuetify'
 import App from './App.vue'
+import * as firebase from 'firebase'
 import Vcarousel from 'vuetify'
 import Datepicker from 'vuejs-datepicker'
 import { store } from './store'
@@ -18,5 +19,14 @@ Vue.component('Vcarousel', Vcarousel, 'Datepicker', Datepicker)
 new Vue({
   render: h => h(App),
   router,
-  store
+  store,
+  created () {
+    firebase.initializeApp({
+      apiKey: 'AIzaSyAKHbm091MMAf4stFX-zIHKFSEj4WWGZbw',
+      authDomain: 'vue-devmeetup-3d4c9.firebaseapp.com',
+      databaseURL: 'https://vue-devmeetup-3d4c9.firebaseio.com',
+      projectId: 'vue-devmeetup-3d4c9',
+      storageBucket: 'vue-devmeetup-3d4c9.appspot.com',
+    })
+  }
 }).$mount('#app')

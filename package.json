@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "babel-loader": "^8.0.4",
+    "firebase": "^5.7.2",
     "vue": "^2.5.17",
     "vue-carousel": "^0.17.0",
     "vue-router": "^3.0.2",
