@@ -7,6 +7,7 @@ import Vcarousel from 'vuetify'
 import Datepicker from 'vuejs-datepicker'
 import { store } from './store'
 import DateFilter from './filters/date'
+import Alertcmp from './components/shared/Alert'
 
 
 
@@ -15,6 +16,7 @@ Vue.config.productionTip = false
 Vue.filter('date', DateFilter)
 
 Vue.component('Vcarousel', Vcarousel, 'Datepicker', Datepicker)
+Vue.component('app-alert', Alertcmp)
 
 new Vue({
   render: h => h(App),
