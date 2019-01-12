@@ -68,7 +68,7 @@ export const store = new Vuex.Store({
         .catch(
           (error) => {
             console.log(error)
-            commit('setLoading', false)
+            commit('setLoading', true)
           }
         )
     },
@@ -79,12 +79,16 @@ export const store = new Vuex.Store({
                 location: payload.location,
                 imageUrl: payload.imageUrl,
                 description: payload.description,
-                date: payload.date
+                date: payload.date.toISOString()
+
             }
-            firebase.database().ref('meetups').push('meetup')
+            firebase.database().ref('meetups').push(meetup)
             .then((data) => {
-                console.log(data)
-                commit('createMeetup', meetup)
+                const key = data.key;
+                commit('createMeetup', {
+                  ...meetup,
+                  id: key
+                })
             })
             .catch((error) => {
                 console.log(error)
