@@ -9,6 +9,8 @@ import { store } from './store'
 import DateFilter from './filters/date'
 import Alertcmp from './components/shared/Alert'
 import EditMeetupDetailsDialog from './components/Meetup/Edit/EditMeetupDetailsDialog.vue'
+import EditMeetupDateDialog from './components/Meetup/Edit/EditMeetupDateDialog.vue'
+import EditMeetupTimeDialog from './components/Meetup/Edit/EditMeetupTimeDialog.vue'
 
 
 
@@ -19,6 +21,8 @@ Vue.filter('date', DateFilter)
 Vue.component('Vcarousel', Vcarousel, 'Datepicker', Datepicker)
 Vue.component('app-alert', Alertcmp)
 Vue.component('app-edit-meetup-details-dialog', EditMeetupDetailsDialog)
+Vue.component('app-edit-details-date-dialog', EditMeetupDateDialog)
+Vue.component('app-edit-details-time-dialog', EditMeetupTimeDialog)
 
 new Vue({
   render: h => h(App),

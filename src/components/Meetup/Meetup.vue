@@ -24,7 +24,11 @@
                      <v-img :src="meetup.imageUrl" height="400px">
                     </v-img>
                     <v-card-text>
-                        <div class="info--text">{{ meetup.date | date}} {{ meetup.location }}</div>
+                        <div class="info--text">{{ meetup.date | date}} - {{ meetup.location }}</div>
+                        <div>
+                            <app-edit-details-date-dialog :meetup="meetup" v-if="userIsCreator"></app-edit-details-date-dialog>
+                            <app-edit-details-time-dialog :meetup="meetup" v-if="userIsCreator"></app-edit-details-time-dialog>
+                        </div>
                         <div>{{ meetup.description }}</div>
                     </v-card-text>
                     <v-card-actions>
